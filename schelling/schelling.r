@@ -1,4 +1,8 @@
 # schelling's segregation model simulation
+#
+#= references
+# Schelling, T. (1978). Micromotives and Macrobehavior. New York: Norton.
+#
 
 # initialize environment for simulation
 # @param x width
@@ -25,7 +29,7 @@ schell_init <- function(x,y,th=40,agent=as.integer(x*y*0.4)*2,dx=1,pratio=50){
 # run simulation
 # @param d return value from "schell_init" or this
 # @param img if TRUE, draw image, else, not draw
-# @param col colors to shade each types
+# @param col colors to shade each types, c(type2,empty,type1)
 # @param ... par for image()
 # @return updated result
 schell_run <- function(d,img=TRUE,...,col=c('black','gray','white')){
