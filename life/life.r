@@ -1,7 +1,7 @@
-# life game simulation
+# geme of life simulation
 # ( cyclic boundary )
 
-# initialize environment to run life game
+# initialize environment to run game of life
 # @param x width
 # @param y height
 # @param live alive condition
@@ -15,6 +15,7 @@ life_init <- function(x,y,live=c(2,3),birth=3){
   return(res)
 }
 
+# return famouse pattern
 life_famous <- function(num=0){
   if( num == 0 ){
      res <- life_init(38,38)
@@ -32,7 +33,7 @@ life_famous <- function(num=0){
   return(res)
 }
 
-# run life game
+# run game of life
 # @param d return value of life_init() or this
 # @param img if TRUE, draw image, else, not
 # @param col color for image()
@@ -43,14 +44,14 @@ life_run <- function(d,img=TRUE,cycle=TRUE,...,col=c('white','black')){
   for(j in 1:d$y){
     j2 <- (j-1):(j+1)
     if( cycle ){
-      j2 <- ifelse(j2 > 0, (j2-1) %% d$y + 1, d$y - j2)
+      j2 <- ifelse(j2 > 0, (j2-1) %% d$y + 1, d$y + j2)
     }else{
       j2 <- ifelse(j2 > 0, ifelse(j2 > d$y,d$y,j2), 1)
     }
     for(i in 1:d$x){
       i2 <- (i-1):(i+1)
       if( cycle ){
-        i2 <- ifelse(i2 > 0, (i2-1) %% d$x + 1, d$x - i2)
+        i2 <- ifelse(i2 > 0, (i2-1) %% d$x + 1, d$x + i2)
       }else{
         i2 <- ifelse(i2 > 0, ifelse(i2 > d$x,d$x,i2), 1)
       }
