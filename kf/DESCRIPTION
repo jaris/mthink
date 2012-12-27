@@ -1,0 +1,9 @@
+Package: kf
+Type: Package
+Title: A implementation of Kalman Filer
+Version: 1.0
+Date: 2012-12-22
+Author: jaris
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: This contains basic procedures to solve Kalman Filter
+License: MIT
